@@ -78,5 +78,10 @@ public class HelloWorld {
          */
 
         System.out.println(Integer.MAX_VALUE);
+
+        String name = "codeup";
+        System.out.printf("Hello there, %s. Nice to see you.%n", name);
+
+
     }
 }
