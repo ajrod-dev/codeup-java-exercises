@@ -12,7 +12,10 @@ public class Bob {
             response = input.next();
         }while(!response.equals("no"));
         System.out.println("Have a good day! Hope you enjoyed Bob's company.");
+
     }
+
+
     public static void speakingWithBob(){
         Scanner input = new Scanner(System.in);
         String messageToBob;
