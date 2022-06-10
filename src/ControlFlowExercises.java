@@ -58,43 +58,43 @@ public class ControlFlowExercises {
 //                System.out.println(i);
 //            }
 
-        // Table of Powers
-//        String doWeContinue;
-//        do {
-//            Scanner sc = new Scanner(System.in);
-//            System.out.println("What integer would you like to go up to? ");
-//            int input = sc.nextInt();
-//            System.out.println("Here is your table: ");
-//            System.out.println("number | squared | cubed");
-//            System.out.println("------ | ------- | -----");
-//            int start = 1;
-//            while (start <= input) {
-//                System.out.println(start + "\t   | " + (int) Math.pow(start, 2) + "\t\t | " + (int) Math.pow(start, 3));
-//                start++;
-//            }
-//            System.out.println("Do you wish to continue? [y] or [n]");
-//            doWeContinue = sc.next();
-//        }while(!Objects.equals(doWeContinue, "n"));
-
-        String shallWeContinue;
+//         Table of Powers
+        String doWeContinue;
         do {
             Scanner sc = new Scanner(System.in);
-            System.out.println("Enter your numerical grade from 0 to 100: ");
-            int userGrade = sc.nextInt();
-            if (userGrade >= 88 && userGrade <= 100) {
-                System.out.println("Grade: A");
-            } else if (userGrade >= 80 && userGrade <= 87) {
-                System.out.println("Grade: B");
-            } else if (userGrade >= 67 && userGrade <= 79) {
-                System.out.println("Grade: C");
-            } else if (userGrade >= 60 && userGrade <= 66) {
-                System.out.println("Grade: D");
-            } else if (userGrade >= 0 && userGrade <= 59) {
-                System.out.println("Grade: F");
+            System.out.println("What integer would you like to go up to? ");
+            int input = sc.nextInt();
+            System.out.println("Here is your table: ");
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
+            int start = 1;
+            while (start <= input) {
+                System.out.println(start + "\t   | " + (int) Math.pow(start, 2) + "\t\t | " + (int) Math.pow(start, 3));
+                start++;
             }
-            System.out.println("Would you like to continue? ");
-            shallWeContinue = sc.next();
-        }while(!shallWeContinue.equals("n"));
+            System.out.println("Do you wish to continue? [y] or [n]");
+            doWeContinue = sc.next();
+        }while(!doWeContinue.equals("n"));
+
+//        String shallWeContinue;
+//        do {
+//            Scanner sc = new Scanner(System.in);
+//            System.out.println("Enter your numerical grade from 0 to 100: ");
+//            int userGrade = sc.nextInt();
+//            if (userGrade >= 88 && userGrade <= 100) {
+//                System.out.println("Grade: A");
+//            } else if (userGrade >= 80 && userGrade <= 87) {
+//                System.out.println("Grade: B");
+//            } else if (userGrade >= 67 && userGrade <= 79) {
+//                System.out.println("Grade: C");
+//            } else if (userGrade >= 60 && userGrade <= 66) {
+//                System.out.println("Grade: D");
+//            } else if (userGrade >= 0 && userGrade <= 59) {
+//                System.out.println("Grade: F");
+//            }
+//            System.out.println("Would you like to continue? ");
+//            shallWeContinue = sc.next();
+//        }while(!shallWeContinue.equals("n"));
 
 
 
