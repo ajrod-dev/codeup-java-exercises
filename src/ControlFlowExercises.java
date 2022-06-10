@@ -1,3 +1,4 @@
+import java.util.Objects;
 import java.util.Scanner;
 
 public class ControlFlowExercises {
@@ -38,13 +39,14 @@ public class ControlFlowExercises {
 //        for(int i = 100; i >= -10; i-=5){
 //            System.out.println(i);
 //        }
-       
+
 //      2.)
 //        for(int i = 2; i < 1000000; i = (int)Math.pow(i,2)){
 //            System.out.println(i);
 //        }
 
         // FizzBuzz
+
 //        for(int i = 1; i<=100; i++){
 //            if(i % 15 == 0){
 //                System.out.println("FizzBuzz");
@@ -57,21 +59,29 @@ public class ControlFlowExercises {
 //            }
 
         // Table of Powers
-        Scanner sc = new Scanner(System.in);
-        System.out.println("What integer would you like to go up to? ");
-        int input = sc.nextInt();
-        System.out.println("Here is your table: ");
-        System.out.println("number | squared | cubed");
-        System.out.println("------ | ------- | -----");
-        int start = 1;
-        while(start <= input){
-            System.out.println(start + "\t   | " + (int)Math.pow(start, 2) + "\t\t | " + (int)Math.pow(start, 3));
-            start++;
-        }
+        String doWeContinue;
+        do {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("What integer would you like to go up to? ");
+            int input = sc.nextInt();
+            System.out.println("Here is your table: ");
+            System.out.println("number | squared | cubed");
+            System.out.println("------ | ------- | -----");
+            int start = 1;
+            while (start <= input) {
+                System.out.println(start + "\t   | " + (int) Math.pow(start, 2) + "\t\t | " + (int) Math.pow(start, 3));
+                start++;
+            }
+            System.out.println("Do you wish to continue? [y] or [n]");
+            doWeContinue = sc.next();
+        }while(!Objects.equals(doWeContinue, "n"));
+
+
+
 
 
     }
 
-    }
+}
 
 
