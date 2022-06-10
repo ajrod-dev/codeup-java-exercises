@@ -94,9 +94,7 @@ public class ControlFlowExercises {
             }
             System.out.println("Would you like to continue? ");
             shallWeContinue = sc.next();
-        }while(!Objects.equals(shallWeContinue, "n"));
-
-
+        }while(!shallWeContinue.equals("n"));
 
 
 
