@@ -1,3 +1,4 @@
+import java.util.Random;
 import java.util.Scanner;
 
 public class MethodsExercises {
@@ -16,7 +17,29 @@ public class MethodsExercises {
 //        System.out.println("You entered " + userNum);
 
         // Calculate the factorial of a number.
-        factorial();
+//        factorial();
+
+        // Create an application that simulates dice rolling.
+        rollDice();
+
+    }
+    public static void rollDice(){
+        Scanner sc = new Scanner(System.in);
+        System.out.println("We're going to roll a pair of dice. \nPick how many sides each die have: ");
+        int sides = sc.nextInt();
+        System.out.println("Type 'r' to roll the dice.");
+        String response = sc.next();
+        while(response.equalsIgnoreCase("r")){
+            int firstDie = (int)(Math.random() * (sides) + 1);
+            int secondDie = (int)(Math.random() * (sides) + 1);
+            System.out.printf("1st Die: %d, 2nd Die: %d\n", firstDie, secondDie);
+            System.out.println("Do you wish to roll again? [y] or [n]");
+            if(sc.next().equalsIgnoreCase("n")){
+                response = "exit";
+            }
+        }
+
+
 
 
     }
@@ -29,7 +52,7 @@ public class MethodsExercises {
             int userNum = sc.nextInt();
             result = factorial(userNum);
             System.out.println("End result: " + result);
-            System.out.println("Do you wish to continue? ");
+            System.out.println("Do you wish to continue? [y] or [n]");
             if(sc.next().equalsIgnoreCase("y")){
                 result = 1;
             }
