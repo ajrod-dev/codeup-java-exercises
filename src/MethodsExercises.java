@@ -11,8 +11,9 @@ public class MethodsExercises {
 //        division(x, y);
 //        modulus(x, y);
 
-        // Create a method that validates that user input is in a certain range and returns that input as an integer if it is within the given range. If not, prompt the user to input their number again until the input is within range.
+//         Create a method that validates that user input is in a certain range and returns that input as an integer if it is within the given range. If not, prompt the user to input their number again until the input is within range.
 //        System.out.println("Enter a number between 1 and 10: ");
+//
 //        int userNum = getInteger(1,10);
 //        System.out.println("You entered " + userNum);
 
@@ -20,7 +21,16 @@ public class MethodsExercises {
 //        factorial();
 
         // Create an application that simulates dice rolling.
-        rollDice();
+//        rollDice();
+
+        // Prime
+//        int num = 10;
+//        boolean primeNum = isPrime(num);
+//        if (primeNum){
+//            System.out.println(num + " is a Prime number.");
+//        }else{
+//            System.out.println(num + " is NOT a Prime number.");
+//        }
 
     }
     public static void rollDice(){
@@ -68,9 +78,7 @@ public class MethodsExercises {
             System.out.println("Please enter a number less than or equal to 20");
             return 0;
         }
-        else {
-            return num * factorial(num - 1);
-        }
+        return num * factorial(num - 1);
     }
     public static int getInteger(int min, int max){
         Scanner sc = new Scanner(System.in);
@@ -80,6 +88,18 @@ public class MethodsExercises {
         }
         System.out.println("The integer you entered is not within range, please enter another: ");
         return getInteger(min, max);
+    }
+
+    public static Boolean isPrime(Integer n) {
+        boolean response = false;
+        for(int i = 1; i <= n; i++){
+           if(i == 1 || i == n){
+               continue;
+           }else if(n % i == 0){
+               return false;
+           }
+        }
+        return true;
     }
 
     public static Integer addition(int x, int y){
