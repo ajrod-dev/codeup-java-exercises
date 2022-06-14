@@ -18,7 +18,7 @@ public class MethodsExercises {
 //        System.out.println("You entered " + userNum);
 
         // Calculate the factorial of a number.
-//        factorial();
+        factorial();
 
         // Create an application that simulates dice rolling.
 //        rollDice();
@@ -48,9 +48,6 @@ public class MethodsExercises {
                 response = "exit";
             }
         }
-
-
-
 
     }
 
