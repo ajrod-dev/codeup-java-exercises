@@ -65,7 +65,8 @@ public class MoviesApplication {
                 case 6:
                     sc.reset();
                     System.out.println("Enter a movie title: ");
-                    String addedTitle = sc.next();
+                    sc.nextLine();
+                    String addedTitle = sc.nextLine();
                     System.out.println("Enter the movie category: ");
                     String addedCategory = sc.next();
                     Movie[] newList = addMovie(MoviesArray.findAll(), addedTitle, addedCategory);
