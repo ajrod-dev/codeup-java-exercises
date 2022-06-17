@@ -22,6 +22,7 @@ public class MoviesApplication {
             System.out.println("3 - view movies in the drama category");
             System.out.println("4 - view movies in the horror category");
             System.out.println("5 - view movies in the scifi category\n");
+            System.out.println("6 - add a movie (with name and category)\n");
             System.out.println("Enter your choice: \n");
             int input = sc.nextInt();
             switch(input) {
@@ -61,6 +62,20 @@ public class MoviesApplication {
                     System.out.println("------------------");
                     getMovieByGenre("scifi");
                     break;
+                case 6:
+                    sc.reset();
+                    System.out.println("Enter a movie title: ");
+                    String addedTitle = sc.next();
+                    System.out.println("Enter the movie category: ");
+                    String addedCategory = sc.next();
+                    Movie[] newList = addMovie(MoviesArray.findAll(), addedTitle, addedCategory);
+                    System.out.println("------------------");
+                    System.out.println("List w/ New Movie Added:    ");
+                    System.out.println("------------------");
+                    for (Movie movie : newList) {
+                        System.out.println(movie.getName());
+                    }
+                    break;
                 default:
                     System.out.println("Thanks for coming by.");
                     flag = false;
@@ -86,6 +101,12 @@ public class MoviesApplication {
                 System.out.println(movie.getName());
             }
         }
+    }
+
+    public static Movie[] addMovie(Movie[] movies, String name, String category){
+        Movie[] result = Arrays.copyOf(movies, movies.length + 1);
+        result[movies.length] = new Movie(name, category);
+        return result;
     }
 
 }
