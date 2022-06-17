@@ -31,7 +31,7 @@ public class MoviesApplication {
                     break;
                 case 1:
                     System.out.println("------------------");
-                    System.out.println("All Movies: ");
+                    System.out.println("All Movies:       ");
                     System.out.println("------------------");
                     for (Movie movie : movieArr) {
                         System.out.println(movie.getName());
@@ -39,25 +39,25 @@ public class MoviesApplication {
                     break;
                 case 2:
                     System.out.println("------------------");
-                    System.out.println("Animated Movies: ");
+                    System.out.println("Animated Movies:  ");
                     System.out.println("------------------");
                     getMovieByGenre("animated");
                     break;
                 case 3:
                     System.out.println("------------------");
-                    System.out.println("Drama Movies: ");
+                    System.out.println("Drama Movies:     ");
                     System.out.println("------------------");
                     getMovieByGenre("drama");
                     break;
                 case 4:
                     System.out.println("------------------");
-                    System.out.println("Horror Movies: ");
+                    System.out.println("Horror Movies:    ");
                     System.out.println("------------------");
                     getMovieByGenre("horror");
                     break;
                 case 5:
                     System.out.println("------------------");
-                    System.out.println("Sci-Fi Movies: ");
+                    System.out.println("Sci-Fi Movies:    ");
                     System.out.println("------------------");
                     getMovieByGenre("scifi");
                     break;
@@ -66,11 +66,6 @@ public class MoviesApplication {
                     flag = false;
                 }
             }
-
-
-
-
-
     }
 
     public static Movie[] getAllMovies() {
@@ -84,11 +79,11 @@ public class MoviesApplication {
 
     public static void getMovieByGenre(String genre) {
         Movie[] result = MoviesArray.findAll();
-        for (int i = 0; i < result.length; i++) {
-            if (!(result[i].getCategory().equals(genre))) {
+        for (Movie movie : result) {
+            if (!(movie.getCategory().equals(genre))) {
                 continue;
             } else {
-                System.out.println(result[i].getName());
+                System.out.println(movie.getName());
             }
         }
     }
