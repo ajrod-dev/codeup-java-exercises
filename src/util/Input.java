@@ -51,6 +51,7 @@ public class Input {
     }
 
 
-
-
+    public void reset() {
+        scanner.reset();
+    }
 }
