@@ -2,9 +2,7 @@ package grades;
 
 import jdk.swing.interop.SwingInterOpUtils;
 
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public class GradesApplication {
 
@@ -45,22 +43,46 @@ public class GradesApplication {
         for(Map.Entry<String, Student> set : students.entrySet()){
             System.out.printf("|" + set.getKey() + "|\t");
         }
+        System.out.printf("  |All Students|\t");
 
         boolean quit = false;
-        START:
         do {
             System.out.println("\nWhat student would you like to see more information on?\n");
             String input = sc.next();
-            if(!students.containsKey(input)){
+            if(!students.containsKey(input) && (!input.equalsIgnoreCase("all"))){
                 System.out.printf("Sorry, no student found with the GitHub username of \"%s\".%n", input);
                 System.out.println("Would you like to see another student?\n");
                 input = sc.next();
                 if(input.equalsIgnoreCase("no") || input.equalsIgnoreCase("n")){
+                    System.out.println("\nGoodbye, and have a wonderful day!\n");
                     quit = true;
                 }else{
-                    break START;
+                    continue;
                 }
-            }else {
+            }else if(input.equalsIgnoreCase("all") || input.equalsIgnoreCase("a") || input.equalsIgnoreCase("all students")){
+                double classGradeTotal = 0;
+                double classAvg;
+                double gradeEntries = 0;
+                System.out.println("----------------------------");
+                System.out.println("All Student Grades: ");
+                for(Map.Entry<String, Student> set : students.entrySet()){
+                    System.out.printf(">"+ set.getValue().getName() + ": "+ set.getValue().getGrades() + "\t%n");
+                    for(Integer subSet : set.getValue().getGrades()){
+                        classGradeTotal += subSet;
+                    }
+                    gradeEntries += set.getValue().getGrades().size();
+                }
+                classAvg = classGradeTotal / gradeEntries;
+                System.out.printf("Class Average: %.2f %n", classAvg);
+                System.out.println("----------------------------");
+                System.out.println("\nWould you like to see another student?\n");
+                input = sc.next();
+                if(input.equalsIgnoreCase("no") || input.equalsIgnoreCase("n")) {
+                    System.out.println("\nGoodbye, and have a wonderful day!\n");
+                    quit = true;
+                }
+
+            }else{
                 System.out.printf("Name: %s - GitHub Username: %s%nCurrent Average: %.1f", students.get(input).getName(), input, students.get(input).getGradeAverage(students.get(input).getGrades()));
                 System.out.println("\nWould you like to see another student?\n");
                 input = sc.next();
