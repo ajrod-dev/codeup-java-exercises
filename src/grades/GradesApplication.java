@@ -31,6 +31,7 @@ public class GradesApplication {
         billy.addGrade(95);
 
         students.put("arod", alex);
+        students.put("arod", alex);
         students.put("sammy-sosa", sammy);
         students.put("johnny_mize-bball", johnny);
         students.put("billy-beane", billy);
