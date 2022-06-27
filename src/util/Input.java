@@ -72,4 +72,27 @@ public class Input {
         return num;
     }
 
+    public int getBinary(String str, int base){
+        int num = 0;
+        try {
+            num = Integer.valueOf(str, base);
+            System.out.println("\n" + str + " in base 2 or binary is: ");
+
+        }catch(Exception NumberFormatException){
+            System.out.println("Invalid input");
+        }
+        return num;
+    }
+
+    public int getHex(String str, int base){
+        int num = 0;
+        try {
+            num = Integer.valueOf(str, base);
+            System.out.println("\n" + str + " in base 16 or hex is: ");
+        }catch(Exception NumberFormatException){
+            System.out.println("Invalid input");
+        }
+        return num;
+    }
+
 }

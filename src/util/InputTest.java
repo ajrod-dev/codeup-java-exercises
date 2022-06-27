@@ -9,10 +9,13 @@ public class InputTest {
 
 //        System.out.println(in.getString());
 //        System.out.println(in.yesNo());
-        System.out.println(in.getInt(1,10));
+//        System.out.println(in.getInt(1,10));
 //        System.out.println(in.getInt());
-        System.out.println(in.getDouble(1,10));
+//        System.out.println(in.getDouble(1,10));
 //        System.out.println(in.getDouble());
+        System.out.println(in.getBinary("1100100", 2));
+        System.out.println(in.getHex("3E8", 16));
+
 
 
 
