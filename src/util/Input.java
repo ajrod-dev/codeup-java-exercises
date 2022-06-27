@@ -6,7 +6,7 @@ public class Input {
     private Scanner scanner = new Scanner(System.in);
 
     public String getString(){
-        System.out.println("Enter a string: ");
+//        System.out.println("Enter a string: ");
         return scanner.nextLine();
     }
 
@@ -22,36 +22,54 @@ public class Input {
 
     public int getInt(int min, int max){
         System.out.println("Enter a whole number within range: ");
-        int num = scanner.nextInt();
-        while(num < min || num > max){
-            System.out.println("Enter a whole number within range: ");
-            num = scanner.nextInt();
+        int num = 0;
+        try {
+            num = Integer.valueOf(getString());
+            if(num < min || num > max){
+               throw new Exception("Not within range");
+            }
+        }catch(Exception NumberFormatException){
+            System.out.println("Not a valid input");
+            num = getInt(min, max);
         }
         return num;
     }
 
     public int getInt(){
+        int num = 0;
         System.out.println("Enter a whole number: ");
-        return scanner.nextInt();
-    }
-
-    public double getDouble(double min, double max){
-        System.out.println("Enter a decimal number within range: ");
-        double num = scanner.nextDouble();
-        while(num < min || num > max){
-            System.out.println("Enter a number within range.");
-            num = scanner.nextDouble();
+        try {
+            num = Integer.valueOf(getString());
+        }catch(Exception NumberFormatException){
+            System.out.println("Not a valid input");
         }
         return num;
     }
 
-    public double getDouble(){
+    public double getDouble(double min, double max){
+        System.out.println("Enter a decimal number within range: ");
+        double num = 0;
+        try {
+            num = Double.valueOf(getString());
+            if(num < min || num > max){
+                throw new Exception("Not within range");
+            }
+        }catch(Exception NumberFormatException){
+            System.out.println("Not a valid input");
+            num = getDouble(min, max);
+        }
+        return num;
+    }
+
+    public double getDouble() {
+        double num = 0;
         System.out.println("Enter a decimal number: ");
-        return scanner.nextDouble();
+        try {
+            num = Double.valueOf(getString());
+        } catch (Exception NumberFormatException) {
+            System.out.println("Not a valid input");
+        }
+        return num;
     }
 
-
-    public void reset() {
-        scanner.reset();
-    }
 }

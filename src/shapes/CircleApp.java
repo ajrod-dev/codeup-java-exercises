@@ -13,7 +13,7 @@ public class CircleApp {
             System.out.printf("Circle has a circumference of %f?%n", circle.getCircumference());
             System.out.printf("Circle has an area of %f?%n", circle.getArea());
             count++;
-            in.reset();
+//            in.reset();
             System.out.println("Do you want to make another circle? [y] or [n]");
             makeMoreCircles = in.yesNo();
         }while (makeMoreCircles == true);
